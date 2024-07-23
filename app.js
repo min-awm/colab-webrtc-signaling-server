@@ -57,13 +57,15 @@ app.post("/server", (req, res) => {
     return res.status(500).send("Client not found");
   }
 
-  resClient[resId].res.json(sdp);
+  resClient[resId].res.json({sdp});
+  console.log('opk')
   delete resClient[resId];
   return res.send({ ok: 1 });
 });
 
 app.post("/client", (req, res) => {
   const { sdp, roomId } = req.body;
+  // console.log(sdp)
 
   if (!sdp || !roomId) {
     return res.status(400).send("sdp and roomId are required");
