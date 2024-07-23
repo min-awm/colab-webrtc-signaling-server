@@ -1,3 +1,3 @@
-# Colab webrtc signaling server
+# Polling signaling server
 
 Node 18
